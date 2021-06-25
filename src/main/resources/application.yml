@@ -1,0 +1,16 @@
+mybatis-plus:
+  mapper-locations: classpath*:config/mapper/*.xml
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://101.133.134.12:3306/kutang?rewriteBatchedStatements=true&serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=UTF-8
+    username: qiancijun
+    password: 20010206qianci
+server:
+  port: 8888
+
+ctwing:
+  server: msgpush.ctwing.cn:16651
+  tenantId: 2000038773
+  token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyMDAwMDM4NzczIn0.RhoOP1J-f-R2HbmxVImoxpEqdimfwXbG5UQt4okDaV0
+  certFilePath:

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.qiancijun.ctwing.dao.LevelDao">
+    <select id="selectAll" resultType="com.qiancijun.ctwing.entity.WaterLevel">
+        SELECT * FROM water_level where device_id = #{id} order by timestamp DESC limit 10
+    </select>
+
+    <select id="selectDevice" resultType="java.lang.String">
+        SELECT distinct device_id FROM water_level ;
+    </select>
+</mapper>
