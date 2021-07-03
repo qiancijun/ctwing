@@ -35,7 +35,7 @@ public class UserServiceImpl extends ServiceImpl<UserDao, User> implements UserS
     @Override
     public User login(String email, String password) {
         User user = userDao.selectOne(new QueryWrapper<User>().eq("email", email).and(o ->
-            o.eq(password, password)));
+            o.eq("password", password)));
         return user;
     }
 

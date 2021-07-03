@@ -1,5 +1,7 @@
 package com.qiancijun.ctwing.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,6 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class KuTangInfo {
+    @TableId(type = IdType.AUTO)
     private Integer id; // 库唐编号
     private String name; // 库唐名称
     private float latitude; // 经度

@@ -18,9 +18,9 @@ import java.util.Map;
 
 @Component
 @ConditionalOnClass({
-        IMsgConsumer.class,
-        IMsgListener.class,
-        MqMsgConsumer.class
+        com.ctiot.aep.mqmsgpush.sdk.IMsgConsumer.class,
+        com.ctiot.aep.mqmsgpush.sdk.IMsgListener.class,
+        com.ctiot.aep.mqmsgpush.sdk.MqMsgConsumer.class
 })
 @Slf4j
 public class MQMessageReceiver {

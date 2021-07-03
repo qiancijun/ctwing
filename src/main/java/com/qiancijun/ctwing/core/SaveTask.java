@@ -4,10 +4,10 @@ import com.qiancijun.ctwing.entity.Data;
 import com.qiancijun.ctwing.service.LevelService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.stereotype.Component;
 
-@ConditionalOnBean(MQMessageReceiver.class)
+@ConditionalOnClass(MQMessageReceiver.class)
 @Component
 @Slf4j
 public class SaveTask implements Runnable {
