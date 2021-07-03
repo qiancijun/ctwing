@@ -10,13 +10,19 @@ import com.qiancijun.ctwing.service.LevelService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.util.Map;
 
-@Slf4j
 @Component
+@ConditionalOnClass({
+        IMsgConsumer.class,
+        IMsgListener.class,
+        MqMsgConsumer.class
+})
+@Slf4j
 public class MQMessageReceiver {
     @Value("${ctwing.server}")
     private String server;

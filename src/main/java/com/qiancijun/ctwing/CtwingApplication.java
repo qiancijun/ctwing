@@ -35,6 +35,6 @@ public class CtwingApplication {
     public static void main(String[] args) {
         SpringApplication.run(CtwingApplication.class, args);
         r.receive();
-        new Thread(t).start();
+        if (t != null) new Thread(t).start();
     }
 }
