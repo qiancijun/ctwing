@@ -26,7 +26,7 @@ class CtwingApplicationTests {
 
     @Test
     public void testGetAll() {
-        System.out.println(kuTangInfoService.getAllInfo());
+        System.out.println(kuTangInfoService.getDetails(1));
     }
 
 }

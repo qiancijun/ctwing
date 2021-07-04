@@ -133,4 +133,10 @@ public class CtwingController {
         return userService.count();
     }
 
+    @GetMapping("/getDetails/{id}")
+    public R getDetailsById(@PathVariable("id") Integer id) {
+        Map<String, String> details = kuTangInfoService.getDetails(id);
+        return new R(200, "查找成功", details);
+    }
+
 }
