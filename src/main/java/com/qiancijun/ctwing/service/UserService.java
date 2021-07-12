@@ -9,5 +9,6 @@ public interface UserService extends IService<User> {
     int deleteUser(Integer id);
     User login(String email, String password);
     String getOne(Integer id);
+    String getEmail(Integer id);
     int count();
 }

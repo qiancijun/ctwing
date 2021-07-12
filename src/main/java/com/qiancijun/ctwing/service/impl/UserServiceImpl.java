@@ -45,6 +45,11 @@ public class UserServiceImpl extends ServiceImpl<UserDao, User> implements UserS
     }
 
     @Override
+    public String getEmail(Integer id) {
+        return userDao.selectById(id).getEmail();
+    }
+
+    @Override
     public int count() {
         return userDao.selectCount(null);
     }

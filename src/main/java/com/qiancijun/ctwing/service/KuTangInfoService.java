@@ -15,4 +15,5 @@ public interface KuTangInfoService extends IService<KuTangInfo> {
     Map<String, String> getDetails(Integer id);
     Integer kuTangCount();
     KuTangInfo getOneInfo(Integer id);
+    KuTangInfo getOneInfoByServiceId(String deviceId);
 }

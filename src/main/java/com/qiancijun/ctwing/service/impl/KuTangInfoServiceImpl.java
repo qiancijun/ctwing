@@ -96,5 +96,10 @@ public class KuTangInfoServiceImpl extends ServiceImpl<KuTangInfoDao, KuTangInfo
         return kuTangInfoDao.selectOne(new QueryWrapper<KuTangInfo>().eq("id", id));
     }
 
+    @Override
+    public KuTangInfo getOneInfoByServiceId(String deviceId) {
+        return kuTangInfoDao.selectOne(new QueryWrapper<KuTangInfo>().eq("deviceId", deviceId));
+    }
+
 
 }

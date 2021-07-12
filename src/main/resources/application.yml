@@ -8,6 +8,10 @@ spring:
     url: jdbc:mysql://101.133.134.12:3306/kutang?rewriteBatchedStatements=true&serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=UTF-8
     username: qiancijun
     password: 20010206qianci
+  mail:
+    username: 769303522@qq.com
+    password: evuflnuonfhnbcfd
+    host: smtp.qq.com
 server:
   port: 8080
 
