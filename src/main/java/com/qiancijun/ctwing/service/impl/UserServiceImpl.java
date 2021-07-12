@@ -40,6 +40,11 @@ public class UserServiceImpl extends ServiceImpl<UserDao, User> implements UserS
     }
 
     @Override
+    public String getOne(Integer id) {
+        return userDao.selectById(id).getUsername();
+    }
+
+    @Override
     public int count() {
         return userDao.selectCount(null);
     }

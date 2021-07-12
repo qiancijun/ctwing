@@ -86,5 +86,15 @@ public class KuTangInfoServiceImpl extends ServiceImpl<KuTangInfoDao, KuTangInfo
         return details;
     }
 
+    @Override
+    public Integer kuTangCount() {
+        return kuTangInfoDao.selectCount(null);
+    }
+
+    @Override
+    public KuTangInfo getOneInfo(Integer id) {
+        return kuTangInfoDao.selectOne(new QueryWrapper<KuTangInfo>().eq("id", id));
+    }
+
 
 }

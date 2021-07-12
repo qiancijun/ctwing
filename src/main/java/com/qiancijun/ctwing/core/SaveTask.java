@@ -35,7 +35,7 @@ public class SaveTask implements Runnable {
             levelService.save(d.waterLevel);
             log.info("插入成功");
             try {
-                Thread.sleep(10000);
+                Thread.sleep(60000);
             } catch (Exception e) {
                 e.printStackTrace();
             }

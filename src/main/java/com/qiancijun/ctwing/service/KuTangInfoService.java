@@ -13,4 +13,6 @@ public interface KuTangInfoService extends IService<KuTangInfo> {
     Integer deleteOne(Integer id);
     List<KuTangInfo> getInfosByUserId(Integer id);
     Map<String, String> getDetails(Integer id);
+    Integer kuTangCount();
+    KuTangInfo getOneInfo(Integer id);
 }

@@ -29,7 +29,7 @@ public class CtwingController {
 
     @GetMapping("/getCurrentData/{deviceId}")
     public float getCurrentData(@PathVariable("deviceId") String id) {
-        return data.latesetData.get(id) == null ? 0 : data.latesetData.get(id);
+        return data.latesetData.get(id) == null ? 1 : data.latesetData.get(id);
     }
 
     @GetMapping("/getData/{deviceId}")
@@ -38,8 +38,13 @@ public class CtwingController {
     }
 
     @GetMapping("/getDevices")
-    public List<String> getDeviceCount() {
+    public List<String> getDevices() {
         return levelService.getDevices();
+    }
+
+    @GetMapping("/getDeviceCount")
+    public int getDeviceCount() {
+        return levelService.getDevices().size();
     }
 
     @GetMapping("/getInfos")
@@ -54,6 +59,12 @@ public class CtwingController {
         List<KuTangInfo> res = kuTangInfoService.getInfosByUserId(id);
         if (res == null) return new R(500, "查找失败，请查看错误日志");
         return new R(200, "查找成功", res);
+    }
+
+    @GetMapping("/getOneInfo/{id}")
+    public R getOneInfo(@PathVariable("id") Integer id) {
+        KuTangInfo info = kuTangInfoService.getOneInfo(id);
+        return new R(200, "查找成功", info);
     }
 
     @PostMapping("/insertInfo")
@@ -137,6 +148,16 @@ public class CtwingController {
     public R getDetailsById(@PathVariable("id") Integer id) {
         Map<String, String> details = kuTangInfoService.getDetails(id);
         return new R(200, "查找成功", details);
+    }
+
+    @GetMapping("/getKuTangCount")
+    public int getKuTangCount() {
+        return kuTangInfoService.kuTangCount();
+    }
+
+    @GetMapping("/getUserName/{id}")
+    public String getUserName(@PathVariable("id") Integer id) {
+        return userService.getOne(id);
     }
 
 }
